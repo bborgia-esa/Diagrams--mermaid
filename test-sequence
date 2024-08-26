@@ -1,0 +1,19 @@
+```mermaid
+sequenceDiagram
+  participant Alice as Alice
+  participant John as John
+  participant P1 as Gino
+  participant P2 as Caio
+
+  Alice ->>+ John: Hello John, how are you?
+  John ->>+ P1: new msg
+  P1 ->>+ P2: new msg
+  P1 ->>- P1: new msg
+  Alice ->>+ John: John, can you hear me?
+  P2 --) P1: new msg
+  P2 ->> P2: new msg
+  P1 --) John: new msg
+  John -->>- Alice: Hi Alice, I can hear you!
+  John ->> John: new msg
+  John -->>- Alice: I feel great!
+  deactivate P2
